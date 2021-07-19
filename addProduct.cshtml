@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "addProduct";
+}
+
+<div class="container">
+    <div class="row centered-form">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-sm-offset-2 col-md-offset-4">
+            <div style="margin-top:60px" class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Product Data</h3>
+                </div>
+                <div class="panel-body">
+                    <form role="form" action="@Url.Action("addProduct","Home")" method="post">
+
+                        <div class="form-group">
+                            <label>Product Name</label>
+                            <input type="text" name="productname" id="productname" class="form-control input-sm" placeholder="product Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Customer Name</label>
+                            <input type="text" name="customername" id="customername" class="form-control input-sm" placeholder="customer name">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Selling Unit</label>
+                            <input type="text" name="sellingunit" id="sellingunit" class="form-control input-sm" placeholder="selling unit">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Unit Cost</label>
+                            <input type="text" name="unitcost" id="unitcost" class="form-control input-sm" placeholder="unit cost">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Total Cost</label>
+                            <input type="text" name="totalcost" id="totalcost" class="form-control input-sm" placeholder="total cost">
+                        </div>
+
+                        <input type="submit" value="Add Product" class="btn btn-info btn-block">
+                        <button style="margin-top:20px" class="btn"><a href="@Url.Action("About","Home")">Back</a></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

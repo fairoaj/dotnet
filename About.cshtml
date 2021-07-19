@@ -1,0 +1,43 @@
+﻿@model IEnumerable<TestApplication.Models.productTable>
+
+@{
+    ViewBag.Title = "About";
+}
+
+
+<button class="btn " style="margin-top:40px"><a href="@Url.Action("addProduct","Home")"> Add New Product</a></button>
+<button class="btn " style="margin-top:40px"><a href="@Url.Action("editProduct","Home")"> Edit Product</a></button>
+
+<table style="margin-top:20px" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Product Name</th>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Selling Unit</th>
+            <th scope="col">Unit Cost</th>
+            <th scope="col">Total Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+
+            foreach (var item in Model)
+            {
+        <tr>
+            <td>@item.productname</td>
+            <td>@item.customername</td>
+            <td>@item.sellingunit</td>
+            <td>@item.unitcost</td>
+            <td>@item.totalcost</td>
+            <td>@Html.ActionLink("Edit", "editProduct", "Home",new {id=item.productid },new { @class="btn btn-primary"})</td>
+            <td>@Html.ActionLink("Delete", "deleteProduct", "Home", new { id = item.productid }, new { @class = "btn btn-primary" })</td>
+        </tr>
+            }
+
+        }
+
+    </tbody>
+</table>
+<button class="btn" style="margin-right:200px"><a href="@Url.Action("Contact","Home")"> LogOut</a></button>
+
